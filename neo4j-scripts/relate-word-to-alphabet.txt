@@ -1,0 +1,3 @@
+MATCH (w:Word)
+MERGE (a:Alphabet {letter:toLower(substring(w.spelling, 0, 1))})
+CREATE (w)-[:STARTS_WITH]->(a)
