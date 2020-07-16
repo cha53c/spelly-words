@@ -1,0 +1,4 @@
+// relate word to size node
+MATCH (w:Word)
+MERGE (s:Size {nunmber:size(w.spelling)})
+CREATE (w)-[HAS_N_LETTERS]->(s)

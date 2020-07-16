@@ -1,0 +1,4 @@
+// load words from CVS file
+LOAD CSV WITH HEADERS FROM 'file:///raw-commonly-misspelled-words-list.csv'
+AS row
+MERGE (:Word {spelling:row.word})
