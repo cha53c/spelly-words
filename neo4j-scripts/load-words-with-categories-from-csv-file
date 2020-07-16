@@ -1,0 +1,6 @@
+// load words with categories from CVS file
+LOAD CSV WITH HEADERS FROM 'file:///ie-ei-words.csv'
+AS row
+MERGE (w:Word {spelling:toLower(trim(row.word))})
+MERGE (c:Category {name:row.category})
+CREATE (w)-[:IS_IN_CATEGORY]->(c)

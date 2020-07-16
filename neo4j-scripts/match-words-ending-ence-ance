@@ -1,0 +1,4 @@
+// Find words ending in ance or ence
+MATCH (w:Word)
+WHERE w.spelling ENDS WITH 'ance' OR w.spelling ENDS WITH 'ence'
+RETURN w.spelling

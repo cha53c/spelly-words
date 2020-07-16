@@ -1,0 +1,5 @@
+// relate to ance/ence category
+MATCH (w:Word)
+WHERE w.spelling ENDS WITH 'ance' OR w.spelling ENDS WITH 'ence'
+MERGE (c:Category {name:'ance/ence'})
+CREATE (w)-[:IS_IN_CATEGORY]->(c)
